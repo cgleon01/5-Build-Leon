@@ -22,6 +22,12 @@ body {
     grid-template-columns:1fr;
 }
 
+h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #e2e8f0;
+}
+
 header {
     background-color: #1e293b;
     text-align: center;
@@ -66,12 +72,23 @@ main {
 
 img {
     width:100%;
+    height:auto;
+    border-radius: 0.5rem;
+}
+
+#about, #vendors, #visit {
+    background-color: #1e293b;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid #38bdf8;
 }
 
 #screenings, #workshops, #collaborations {
     background-color: #1e293b;
     padding: 1rem;
-    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
     border-left: 4px solid #38bdf8;
 }
 
@@ -79,7 +96,8 @@ aside {
     background-color: #38bdf8;
     color: #1e293b;
     padding: 1rem;
-    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
 }
 
 a {
@@ -90,7 +108,7 @@ a {
     text-decoration:none;
     text-align:center;
 }
-a:hover {
+.info a:hover, aside a:hover {
     color:#020617;
     background-color:#e2e8f0;
 }
@@ -102,6 +120,36 @@ footer {
     margin-top: 1rem;
 }
 
+
+@media (min-width: 800px) {
+    body {
+        grid-template-columns: 1fr 300px;
+    }
+    header, nav, footer {
+        grid-column: 1 / -1;
+    }
+    nav {
+        display: flex;
+        justify-content: space-around;
+    }
+    nav ul {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-around;
+    }
+    nav a {
+        border-left: none;
+        margin: 0;
+        border-bottom: 4px solid #38bdf8;
+    }
+    .card-row {
+        display: flex;
+        gap: 1rem;
+    }
+    .card-row section {
+        width: 30%;
+    }
+}
 /* ===== Media Query (Medium) ===== */
 /* write a media query for a screen with at least 800px */
 /* change the body's grid template to 1fr 300px */
